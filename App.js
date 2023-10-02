@@ -1,62 +1,81 @@
 import React from 'react';
 import { StyleSheet, Text, View, ImageBackground } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
-
-// Custom Components
-const CustomComponent1 = ({ title, imageSource, message }) => {
-  return (
-    <View style={{ alignItems: 'center' }}>
-      <ImageBackground
-        source={imageSource}
-        style={{ width: 150, height: 150, justifyContent: 'center', alignItems: 'center' }}
-      >
-        <Text style={{ color: 'white', fontSize: 20 }}>{title}</Text>
-      </ImageBackground>
-      <Text style={{ fontSize: 18 }}>{message}</Text>
-    </View>
-  );
-};
-
-const CustomComponent2 = ({ iconName, iconColor, text }) => {
-  return (
-    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-      <AntDesign name={iconName} size={24} color={iconColor} />
-      <Text style={{ fontSize: 18, marginLeft: 10 }}>{text}</Text>
-    </View>
-  );
-};
+import CustomComponent1 from './components/CustomComponent1';
+import CustomComponent2 from './components/CustomComponent2';
 
 export default function App() {
   return (
     <View style={styles.container}>
       <View style={styles.topContainer}>
-        <AntDesign name="restaurant" size={24} color="black" />
+        <AntDesign name="setting" size={24} color="orange" />
         <Text>Good morning! What’s for lunch?</Text>
         <ImageBackground
-          source={require('./assets/restaurant-item.png')}
+          source={require('./assets/burger-fries.jpeg')}
           style={styles.restaurantImage}
         >
           <Text style={styles.imageText}>Try our new favorites</Text>
         </ImageBackground>
       </View>
       <View style={styles.customComponents}>
-        <CustomComponent1
-          title="Order"
-          imageSource={require('./assets/burger-fries.png')}
-          message="Start ordering your favorites here"
-        />
-        <CustomComponent2
-          iconName="heart"
-          iconColor="red"
-          text="Favorites"
-        />
+        <View style={styles.component1Wrapper}>
+          <CustomComponent1
+            title="Order"
+            imageSource={require('./assets/burger-fries.jpeg')}
+            message="Start ordering your favorites here"
+          />
+            <CustomComponent1
+            title="Order"
+            imageSource={require('./assets/burger-fries.jpeg')}
+            message="Start ordering your favorites here"
+          />
+        </View>
+       
+        
+        <View style={styles.iconsWrapper}>
+          <CustomComponent2
+            iconName="heart"
+            iconColor="red"
+            text="Favorites"
+          />
+          <CustomComponent2
+            iconName="tag"
+            iconColor="#FFCC00"
+            text="Offers"
+          />
+          <CustomComponent2
+            iconName="car"
+            iconColor="blue"
+            text="Delivery"
+          />
+          <CustomComponent2
+            iconName="gift"
+            iconColor="purple"
+            text="Gift"
+          />
+          <CustomComponent2
+            iconName="heart"
+            iconColor="red"
+            text="Community"
+          />
+          <CustomComponent2
+            iconName="creditcard"
+            iconColor="teal"
+            text="Payment"
+          />
+          <CustomComponent2
+            iconName="rightcircle"
+            iconColor="blue"
+            text="Locations"
+          />
+        </View>
       </View>
     </View>
   );
 }
-
 const styles = StyleSheet.create({
   container: {
+    marginTop: 37,
     flex: 1,
     padding: 10,
     backgroundColor: '#fff',
@@ -72,12 +91,26 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   imageText: {
+    marginTop: 110,
     color: 'white',
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
     fontSize: 20,
     padding: 5,
   },
   customComponents: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    marginBottom: 10,
     marginTop: 20,
+  },
+  component1Wrapper: {
+    flexDirection: 'row', 
+    marginBottom: 10,
+  },
+  iconsWrapper: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
   },
 });
