@@ -6,9 +6,10 @@ import CustomComponent2 from './components/CustomComponent2';
 
 export default function App() {
   return (
+    
     <View style={styles.container}>
       <View style={styles.topContainer}>
-        <AntDesign name="setting" size={24} color="orange" />
+        <AntDesign  name="setting" size={24} color="orange" />
         <Text>Good morning! What’s for lunch?</Text>
         <ImageBackground
           source={require('./assets/burger-fries.jpeg')}
@@ -17,6 +18,9 @@ export default function App() {
           <Text style={styles.imageText}>Try our new favorites</Text>
         </ImageBackground>
       </View>
+
+
+      
       <View style={styles.customComponents}>
         <View style={styles.component1Wrapper}>
           <CustomComponent1
@@ -25,19 +29,15 @@ export default function App() {
             message="Start ordering your favorites here"
           />
             <CustomComponent1
-            title="Order"
-            imageSource={require('./assets/burger-fries.jpeg')}
-            message="Start ordering your favorites here"
+            title="Rewards"
+            imageSource={require('./assets/food.jpeg')}
+            message="Collect Points to earn free rewards"
           />
         </View>
        
         
         <View style={styles.iconsWrapper}>
-          <CustomComponent2
-            iconName="heart"
-            iconColor="red"
-            text="Favorites"
-          />
+     
           <CustomComponent2
             iconName="tag"
             iconColor="#FFCC00"
@@ -45,7 +45,7 @@ export default function App() {
           />
           <CustomComponent2
             iconName="car"
-            iconColor="blue"
+            iconColor="green"
             text="Delivery"
           />
           <CustomComponent2
@@ -60,13 +60,15 @@ export default function App() {
           />
           <CustomComponent2
             iconName="creditcard"
-            iconColor="teal"
+            iconColor="black"
             text="Payment"
           />
           <CustomComponent2
-            iconName="rightcircle"
-            iconColor="blue"
+            iconName="CompassOutlined"
+            iconColor="red"
             text="Locations"
+          
+
           />
         </View>
       </View>
@@ -78,7 +80,7 @@ const styles = StyleSheet.create({
     marginTop: 37,
     flex: 1,
     padding: 10,
-    backgroundColor: '#fff',
+    backgroundColor: 'cream',
   },
   topContainer: {
     alignItems: 'center',
@@ -113,4 +115,5 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     justifyContent: 'center',
   },
+  
 });

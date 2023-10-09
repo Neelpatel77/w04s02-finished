@@ -1,12 +1,14 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
+ 
 
 const CustomComponent2 = ({ iconName, iconColor, text }) => {
   return (       
     <View style={styles.iconFrame}>
       <AntDesign name={iconName} size={50} color={iconColor} />
       <Text style={{ fontSize: 18, marginTop: 5 }}>{text}</Text>
+ 
     </View>
   );
 };
